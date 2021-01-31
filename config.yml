@@ -1,0 +1,56 @@
+
+MODEL_CONFIG:
+  AUDIO_LENGTH : 16384
+  SAMPLE_DIM: 1024
+
+TRAINING_CONFIG:
+
+  EPOCH: 50
+  BATCH_SIZE: 4
+
+  # lr and lambda
+  G_LR : 10e-5
+  D_LR : 10e-5
+  LAMBDA_D_FAKE  : 1
+  LAMBDA_D_REAL  : 1
+  LAMBDA_G_FAKE  : 1
+  LAMBDA_GP  : 1000
+
+  # Optimizer
+  OPTIM : ADAM
+  BETA1: 0.5
+  BETA2: 0.999
+  D_CRITIC: 1
+  G_CRITIC: 3
+
+  # Settings
+  NUM_WORKER : 4
+  MODE : 'train'
+  CPU_SEED : 123
+  GPU_SEED : 456
+  USE_TENSORBOARD : 'False' # 'True' or 'False'
+
+  # Directory
+  DATA_DIR : 'data'
+  TRAIN_DIR : 'audio_generation_tutorial'
+  LOG_DIR : 'logs'
+  SAMPLE_DIR : 'samples'
+  RESULT_DIR : 'results'
+  MODEL_DIR : 'models'
+
+  # GPU
+  GPU: 0
+
+  # Step Size
+
+  SAMPLE_STEP : 1 # epoch based
+  LOG_STEP : 100 # iteration based
+  SAVE_STEP : 5 # epoch based
+  SAVE_START : 10
+  LR_DECAY_STEP : 20 # epoch based
+  LR_UPDATE_STEP : 20 # epoch based
+
+TEST_CONFIG:
+  TEST_EPOCH : 100
+
+
